@@ -1,0 +1,19 @@
+{
+	"name": "Webスーパー塗料",
+	"short_name": "S塗料",
+	"icons": [{
+			"src": "favicon-128x128.png",
+		 	"sizes": "128x128",
+		 	"type": "image/png"
+		}, {
+			"src": "favicon-144x144.png",
+		 	"sizes": "144x144",
+		 	"type": "image/png"
+		}],
+	"start_url": "/pwa/index.html",
+	"display": "standalone",
+	"background_color": "#fff",
+	"orientation": "portrait",
+	"theme_color": "#2196F3",
+	"gcm_sender_id": "1087670939003"
+}

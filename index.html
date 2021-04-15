@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="content-language" content="ja">
+	<meta name="robots" content="noindex,nofollow,noarchive">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<title>スーパー塗料</title>
+	<link rel="icon" href="favicon-128x128.png" sizes="128x128" type="image/png">
+	<link rel="apple-touch-icon" href="favicon-128x128.png" sizes="128x128">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="manifest" href="manifest.json">
+</head>
+<body>
+<!-- wapper start -->
+<div id="wapper" class="wapper">
+<!-- content_header start -->
+	<div class="content_header_root">
+		<span>スーパー塗料Ｖ１３ ログイン</span>
+	</div>
+<!-- content_header end -->
+<!-- content_search start -->
+	<form id="loginForm" name="loginForm" method="post" action="/service/hanbai/mo/login">
+		<input type="hidden" name="mode" value="exec" />
+		<input type="hidden" name="BACKURL" value="" />
+		<input type="hidden" name="MEDIATYPE" value="0" />
+		<div class="content_search">
+			<div class="search_area">
+				<div class="single_title">
+					<table>
+						<tr>
+							<td class="title"><label for="USER_ID">ユーザー</label></td>
+							<td class="field_cd"><input id="USER_ID" name="USER_ID" type="text" value="" /></td>
+						</tr>
+						<tr>
+							<td class="title"><label for="USER_PASSWORD">パスワード</label></td>
+							<td class="field_cd"><input id="USER_PASSWORD" name="USER_PASSWORD" type="password" value=""  autocomplete="off" /></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="status_content" class="status_content">
+				<p class="error">
+
+				</p>
+			</div>
+			<div class="parent_table">
+				<div class="col-10 align-center">
+					<label id="LOGIN_BUTTON" class="btn login_btn">ログイン</label>
+				</div>
+			</div>
+	  	</div>
+<!-- content_body start -->
+<!-- content_body end -->
+	</form>
+<!-- content_footer start -->
+	<div class="content_footer">
+		<div>Version 2.4</div>
+	</div>
+<!-- content_footer end -->
+</div>
+<!-- wapper end -->
+</body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyADt3sVwyHqO7P8lakWjz_Pkj15ZO7wuBc",
+		authDomain: "supertr-8c832.firebaseapp.com",
+		databaseURL: "https://supertr-8c832.firebaseio.com",
+		projectId: "supertr-8c832",
+		storageBucket: "supertr-8c832.appspot.com",
+		messagingSenderId: "1087670939003"
+	};
+	firebase.initializeApp(config);
+
+    navigator.serviceWorker.register('serviceWorker.js').then(function(reg) {
+        reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
+          console.log(sub.endpoint);
+        });
+    }).catch(function(error) {
+        console.log(error);
+    });
+} else {
+	console.log("serviceworker is not implemented yet.");
+}
+</script>
